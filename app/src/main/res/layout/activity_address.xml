@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".buy_n_cart.AddressActivity"
+    android:orientation="vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My Address"
+        android:id="@+id/text"
+        android:textColor="@color/black"
+        android:textSize="@dimen/large_margin"
+        android:layout_margin="@dimen/small_margin"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycle"
+        android:background="@color/grey"
+        android:layout_above="@id/btnAdd"
+        />
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/small_margin"
+        android:background="@drawable/button_background"
+        android:text="Add Address"
+        android:onClick="popUp"
+        android:layout_margin="@dimen/small_margin"
+        />
+</RelativeLayout>

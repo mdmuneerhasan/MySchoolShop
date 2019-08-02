@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".buy_n_cart.TermsAndCondition">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_margin="@dimen/small_margin"
+       >
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="@dimen/text_heading"
+           android:textColor="@color/black"
+           android:text="Terms and conditions"
+           android:textAlignment="center"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="please read these terms and conditions carefully before using my school shop
+, by using the my school shop, you signify your agreement to be bound by these conditions."
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="1.If you use this app you are responsible for maintaining the
+confidential of your account and for restriction access to your device to prevent unauthorised access
+to your account."
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="2.The personal information / data provided to us
+by you during the course of usage of my school shop will be treated as strictly \
+confidential and in accordance with the privacy of customer."
+           />
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="3.we do not guarantee for the product to be delivered
+when you place an order \n we guarantee that product will be delivered when it
+is accepted by seller."
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="4.for cash on delivery item we recommend customer to check
+product properly because if there is any kind of fault then customer can simply reject
+the delivery."
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textColor="@color/black"
+           android:layout_margin="@dimen/small_margin"
+           android:text="5.actual price may vary at time of delivery and it can be as per market situation
+, and if customer does not satisfied with this term and condition he can simply reject the product without any
+extra charges."
+           />
+
+   </LinearLayout>
+</ScrollView>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.multi.myschoolshop">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".school.SchoolEarningActivity"/>
+        <activity android:name=".shop.DeliveredOrderActivity"/>
+        <activity android:name=".shop.RejectedOrderActivity"/>
+        <activity android:name=".shop.NewOrderActivity"/>
+        <activity android:name=".activity.SearchActivity" />
+        <activity android:name=".buy_n_cart.AddressActivity" />
+        <activity android:name=".buy_n_cart.TermsAndCondition" />
+        <activity android:name=".buy_n_cart.PaymentActivity" />
+        <activity android:name=".buy_n_cart.BuyActivity" />
+        <activity android:name=".shop.AddItemActivity" />
+        <activity android:name=".school.CreateSchoolActivity" />
+        <activity android:name=".school.SchoolConsoleActivity" />
+        <activity android:name=".shop.CreateShopActivity" />
+        <activity android:name=".shop.ShopConsoleActivity" />
+        <activity android:name=".activity.SignUpActivity" />
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

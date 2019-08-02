@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MySchoolShop</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="web_id">100423673193-nrjc146626hm9ubcdhcg2ekl02v8a70r.apps.googleusercontent.com</string>
+</resources>

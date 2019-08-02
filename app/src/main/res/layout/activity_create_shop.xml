@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".shop.CreateShopActivity">
+
+
+    <android.support.v7.widget.CardView
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:id="@+id/cv3"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shop Account"
+                android:textSize="@dimen/large_margin"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                />
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:background="@drawable/circle_red"
+                android:src="@drawable/ic_add_a_photo_black_24dp"
+                android:padding="10dp"
+                android:layout_margin="@dimen/small_margin"
+                android:id="@+id/imgSchool"
+                android:onClick="pick"
+                />
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/small_margin"
+                android:hint="Shop Name"
+                style="@style/EditTextHint"
+                android:theme="@style/EditTextHint"
+                >
+                <EditText
+                    android:layout_width="256dp"
+                    android:layout_height="@dimen/text_input_layout_height"
+                    android:id="@+id/edtSchoolName"
+                    />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="create shop account"
+                android:ems="15"
+                android:layout_margin="@dimen/small_margin"
+                android:id="@+id/btnSchool"
+                android:onClick="create"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
