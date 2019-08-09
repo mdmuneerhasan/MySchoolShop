@@ -197,7 +197,7 @@ public class AddItemActivity extends AppCompatActivity {
                 super.onPostExecute(bytes);
                 imageAdapter.notifyDataSetChanged();
                 if (parentUri !=null){
-                    storage.getSchoolStorage().child("store")
+                    storage.getSchoolStorage().child("store").child(savedData.getValue("shopId"))
                             .child(savedData.getValue("uid")+System.currentTimeMillis()+"."+getExtension(parentUri)).putBytes(bytes)
                             .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                                 @Override
@@ -220,6 +220,8 @@ public class AddItemActivity extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             savedData.toast("Upload Failed");
+                            progressBar.setVisibility(View.GONE);
+                            progressBar2.setVisibility(View.GONE);
                         }
                     }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
                         @Override
@@ -313,6 +315,7 @@ public class AddItemActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 categoryList.clear();
+                categoryList.add("Select category");
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()){
                     categoryList.add(dataSnapshot1.getValue(String.class));
                 }

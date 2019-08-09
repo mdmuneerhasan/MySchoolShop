@@ -50,6 +50,7 @@ public class ShopConsoleActivity extends AppCompatActivity {
                 list.add(new GridClass(3,R.drawable.ic_shopping_cart_black_24dp,"New order","recently placed order"));
                 list.add(new GridClass(4,R.drawable.ic_done_black_24dp,"Delivered order","Successfully delivered order"));
                 list.add(new GridClass(5,R.drawable.ic_remove_shopping_cart_black_24dp,"Rejected order","undelivered order due to some reason"));
+                list.add(new GridClass(6,R.drawable.ic_home_black_24dp,"Connected school","see school synced with your shop"));
             }else{
                 list.add(new GridClass(0,R.drawable.ic_add_black_24dp,"Add shop","create a shop account"));
             }
@@ -75,6 +76,9 @@ public class ShopConsoleActivity extends AppCompatActivity {
                     break;
                 case 5:
                     startActivity(new Intent(this, RejectedOrderActivity.class));
+                    break;
+                case 6:
+                    startActivity(new Intent(this, SyncedSchoolActivity.class));
                     break;
             }
         }

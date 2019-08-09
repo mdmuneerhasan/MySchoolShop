@@ -238,7 +238,7 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
         }
         if (parentUri !=null){
             savedData.toast("Uploading your pic");
-            uploadTask=storage.getSchoolStorage().child("store")
+            uploadTask=storage.getSchoolStorage().child("profilePics")
                     .child(savedData.getValue("uid")+System.currentTimeMillis()+"."+getExtension(parentUri)).putFile(parentUri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override

@@ -71,6 +71,8 @@ public class SignUpActivity extends AppCompatActivity {
                             savedData.setValue("email",user2.getEmail());
                             savedData.setValue("number",user2.getNumber());
                             savedData.setValue("photoUrl",String.valueOf(user2.getPhotoUrl()));
+                            savedData.setValue("schoolId",user2.getSchoolId());
+                            savedData.setValue("schoolName",user2.getSchoolName());
                             startActivity(new Intent(getBaseContext(), MainActivity.class));
                         }
                         finish();

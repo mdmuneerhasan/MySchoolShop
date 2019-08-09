@@ -17,6 +17,7 @@ import android.support.v7.widget.SearchView;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -85,8 +86,9 @@ public class SearchActivity extends AppCompatActivity {
                 final AlertDialog alertDialog = dialogBuilder.create();
                 alertDialog.show();
                 TextView tvName=dialogView.findViewById(R.id.tvName);
-                TextView tvPrice=dialogView.findViewById(R.id.tvPrice);
-                TextView tvDescription=dialogView.findViewById(R.id.tvDescription);
+        TextView tvPrice=dialogView.findViewById(R.id.tvPrice);
+        final EditText edtQuantity=dialogView.findViewById(R.id.tvPrice);
+        TextView tvDescription=dialogView.findViewById(R.id.tvDescription);
                 RecyclerView recyclerView=dialogView.findViewById(R.id.recycle);
                 if(item.getArrayList()!=null){
                     specAdapter=new SpecAdapter(item.getArrayList());
@@ -102,8 +104,17 @@ public class SearchActivity extends AppCompatActivity {
                 dialogView.findViewById(R.id.btnBuy).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String quantity = edtQuantity.getText().toString();
+                        if(quantity.trim().equals("")){
+                            quantity="1";
+                        }else if(Integer.parseInt(quantity)>10){
+                            edtQuantity.setError("Max quantity exceeded");
+                            return;
+                        }
+
                         startActivity(new Intent(getContext(), BuyActivity.class)
-                                .putExtra("key",item.getKey()).putExtra("shopId",item.getShopId()));
+                                .putExtra("key",item.getKey()).putExtra("shopId",item.getShopId())
+                                .putExtra("quantity",quantity));
                         alertDialog.cancel();
                     }
                 });

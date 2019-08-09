@@ -130,6 +130,7 @@ public class PaymentActivity extends AppCompatActivity {
                     String myVersion = pInfo.versionName;
                     connection.getVersionControl().child("present").setValue(myVersion);
                     Log.e("version",myVersion);
+                    Float.parseFloat(version);
                     if(Float.parseFloat(myVersion)>=Float.parseFloat(version)){
                         // work fine
                         savedData.log("fine");

@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".school.SchoolEarningActivity"/>
-        <activity android:name=".shop.DeliveredOrderActivity"/>
-        <activity android:name=".shop.RejectedOrderActivity"/>
-        <activity android:name=".shop.NewOrderActivity"/>
+        <activity android:name=".shop.SyncedSchoolActivity"></activity>
+        <activity android:name=".school.SchoolEarningActivity" />
+        <activity android:name=".shop.DeliveredOrderActivity" />
+        <activity android:name=".shop.RejectedOrderActivity" />
+        <activity android:name=".shop.NewOrderActivity" />
         <activity android:name=".activity.SearchActivity" />
         <activity android:name=".buy_n_cart.AddressActivity" />
         <activity android:name=".buy_n_cart.TermsAndCondition" />
@@ -32,10 +33,11 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

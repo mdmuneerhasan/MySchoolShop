@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.multi.myschoolshop.R;
 import com.squareup.picasso.Callback;
@@ -20,46 +21,16 @@ import java.util.TimerTask;
 
 public class ImageSlider extends PagerAdapter {
 
-    private final Timer swipeTimer;
-    int num_pages = 0;
     private ArrayList<String> imageModelArrayList;
     private LayoutInflater inflater;
     private Context context;
     ViewPager mPager;
-    private int currentPage=0;
 
     public ImageSlider(ArrayList<String> imageModelArrayList, ViewPager mPager) {
         this.imageModelArrayList = imageModelArrayList;
         this.mPager = mPager;
-        swipeTimer = new Timer();
         context=mPager.getContext();
         inflater=LayoutInflater.from(context);
-
-    }
-
-    private void init() {
-
-    num_pages =imageModelArrayList.size();
-
-        // Auto start of viewpager
-        final Handler handler = new Handler();
-        final Runnable Update = new Runnable() {
-            public void run() {
-                if (currentPage == num_pages) {
-                    currentPage = 0;
-                }else {
-                    currentPage=mPager.getCurrentItem()+1;
-                }
-                mPager.setCurrentItem(currentPage++, true);
-            }
-        };
-        swipeTimer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                handler.post(Update);
-            }
-        }, 3000, 3000);
-
 
     }
 
@@ -86,17 +57,10 @@ public class ImageSlider extends PagerAdapter {
         View imageLayout = inflater.inflate(R.layout.slidingimages_layout, view, false);
         assert imageLayout != null;
         final ImageView imageView = imageLayout.findViewById(R.id.image);
-        Picasso.get().load(imageModelArrayList.get(position)).into(imageView, new Callback() {
-            @Override
-            public void onSuccess() {
-                init();
-            }
-
-            @Override
-            public void onError(Exception e) {
-            }
-        });
+        Picasso.get().load(imageModelArrayList.get(position)).into(imageView);
         view.addView(imageLayout, 0);
+        TextView textView=imageLayout.findViewById(R.id.tvText);
+        textView.setText((position+1)+"/"+getCount());
         return imageLayout;
     }
 

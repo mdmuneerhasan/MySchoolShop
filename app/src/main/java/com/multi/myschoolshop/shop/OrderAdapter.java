@@ -44,7 +44,15 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Holder>{
             ImageView imageView=dialogView.findViewById(R.id.imageView);
             TextView textView1=dialogView.findViewById(R.id.text2);
             TextView textView2=dialogView.findViewById(R.id.text1);
-            textView2.setText(item.getName());
+            int s=0;
+            if(item.getArrayList()!=null){
+                s=item.getArrayList().size();
+            }
+            if(s>0){
+                textView2.setText(item.getName()+"\n"+item.getArrayList().get(s-1).getValue());
+            }else{
+                textView2.setText(item.getName());
+            }
             textView1.setText(item.getDescription()+"\nRs:"+item.getPrice()+"*"+item.getQuantity());
             Picasso.get().load(item.getImagesList().get(0)).into(imageView);
             holder.linearLayout.addView(dialogView);

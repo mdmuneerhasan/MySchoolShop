@@ -84,6 +84,12 @@ public class SetUpFragment extends Fragment implements View.OnClickListener {
         cv2=view.findViewById(R.id.cv2);
         btnFollow.setOnClickListener(this);
         btnConnect.setOnClickListener(this);
+        if(savedData.haveValue("schoolId")){
+//            FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction();
+//            ft.replace(R.id.container, new MainFragment());
+//            ft.commit();
+            savedData.toast("you are already following a institute");
+        }
         edtValue.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -138,6 +144,8 @@ public class SetUpFragment extends Fragment implements View.OnClickListener {
                         .child(savedData.getValue("uid")).child("name").setValue(savedData.getValue("name"));
                 connection.getDbUser().child(savedData.getValue("uid")).child("following")
                         .child(helperClass3.getId()).setValue(helperClass3);
+                connection.getDbUser().child(savedData.getValue("uid")).child("schoolId")
+                        .setValue(helperClass3.getId());
                 helperClass3.setButton("following");
                 savedData.setValue("schoolId",helperClass3.getId());
                 savedData.setValue("schoolName",helperClass3.getName());

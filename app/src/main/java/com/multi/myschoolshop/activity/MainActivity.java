@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         bgapp.animate().translationY(-1900).setDuration(3000).setStartDelay(100);
         clover.animate().alpha(0).setDuration(3000).setStartDelay(1500);
         textsplash.animate().translationY(140).alpha(0).setDuration(3000).setStartDelay(1000);
-        menus.animate().translationY(-480).setDuration(2000).setStartDelay(1000);
+        menus.animate().translationY(0).setDuration(2000).setStartDelay(1000);
         texthome.startAnimation(frombottom);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         };
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         tvName=navigationView.getHeaderView(0).findViewById(R.id.tvName);
